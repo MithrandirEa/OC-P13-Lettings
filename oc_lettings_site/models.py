@@ -3,6 +3,7 @@ from django.core.validators import MaxValueValidator, MinLengthValidator
 from django.contrib.auth.models import User
 
 
+# TODO: les models Address et Letting sont à déplacer dans une new app "lettings"
 class Address(models.Model):
     number = models.PositiveIntegerField(validators=[MaxValueValidator(9999)])
     street = models.CharField(max_length=64)
@@ -23,6 +24,7 @@ class Letting(models.Model):
         return self.title
 
 
+#  TODO: Profiles est à déplacer dans une new app "profiles"
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     favorite_city = models.CharField(max_length=64, blank=True)

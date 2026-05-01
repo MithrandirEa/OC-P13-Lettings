@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import Letting, Profile
 
-
+# TODO: les views de lettings et profiles sont à déplacer dans les views.py des apps respectives
 
 
 # Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie quam lobortis leo consectetur ullamcorper non id est. Praesent dictum, nulla eget feugiat sagittis, sem mi convallis eros,

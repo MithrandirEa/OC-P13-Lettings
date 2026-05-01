@@ -3,6 +3,7 @@ from django.urls import path
 
 from . import views
 
+# TODO: les urls de lettings et profiles sont à déplacer dans les urls.py des apps respectives
 urlpatterns = [
     path('', views.index, name='index'),
     path('lettings/', views.lettings_index, name='lettings_index'),

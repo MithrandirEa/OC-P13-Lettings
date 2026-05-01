@@ -19,7 +19,7 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
+# TODO: les apps lettings et profiles sont à créer et à ajouter dans INSTALLED_APPS
 INSTALLED_APPS = [
     'oc_lettings_site.apps.OCLettingsSiteConfig',
     'django.contrib.admin',
@@ -42,6 +42,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'oc_lettings_site.urls'
 
+# TODO: les templates de lettings et profiles sont à créer et à ajouter dans DIRS
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
