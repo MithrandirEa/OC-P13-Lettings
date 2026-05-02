@@ -1,14 +1,12 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 from . import views
 
-# TODO: les urls de lettings et profiles sont à déplacer dans les urls.py des apps respectives
 urlpatterns = [
     path('', views.index, name='index'),
-    path('lettings/', views.lettings_index, name='lettings_index'),
-    path('lettings/<int:letting_id>/', views.letting, name='letting'),
-    path('profiles/', views.profiles_index, name='profiles_index'),
-    path('profiles/<str:username>/', views.profile, name='profile'),
     path('admin/', admin.site.urls),
+
+    path('', include('lettings.urls')),
+    path('', include('profiles.urls')),
 ]
