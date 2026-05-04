@@ -16,6 +16,11 @@ class Address(models.Model):
         max_length=3, validators=[MinLengthValidator(3)]
     )
 
+    class Meta:
+        """Configuration supplémentaire du modèle Address."""
+
+        verbose_name_plural = "Addresses"
+
     def __str__(self):
         """Retourne une représentation lisible de l'adresse (numéro + rue)."""
         return f"{self.number} {self.street}"
