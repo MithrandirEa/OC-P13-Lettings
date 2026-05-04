@@ -2,12 +2,13 @@
 
 from django.db import migrations
 
+
 def copy_lettings_data(apps, schema_editor):
-    OldAddress = apps.get_model('oc_lettings_site', 'Address')
-    OldLetting = apps.get_model('oc_lettings_site', 'Letting')
-    
-    NewAddress = apps.get_model('lettings', 'Address')
-    NewLetting = apps.get_model('lettings', 'Letting')
+    OldAddress = apps.get_model("oc_lettings_site", "Address")
+    OldLetting = apps.get_model("oc_lettings_site", "Letting")
+
+    NewAddress = apps.get_model("lettings", "Address")
+    NewLetting = apps.get_model("lettings", "Letting")
 
     for old_address in OldAddress.objects.all():
         NewAddress.objects.create(
@@ -28,10 +29,11 @@ def copy_lettings_data(apps, schema_editor):
             address_id=old_letting.address_id,
         )
 
+
 class Migration(migrations.Migration):
     dependencies = [
-        ('lettings', '0001_initial'),
-        ('oc_lettings_site', '0001_initial'),
+        ("lettings", "0001_initial"),
+        ("oc_lettings_site", "0001_initial"),
     ]
 
     operations = [
