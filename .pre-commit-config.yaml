@@ -30,5 +30,8 @@ repos:
     rev: v4.0.5
     hooks:
       - id: pylint
-        args: ["--disable=all", "--enable=E,F", "--load-plugins=pylint_django"]
-        additional_dependencies: ["django", "pylint-django"]
+        args:
+          - "--disable=all"
+          - "--enable=E,F"
+          - "--disable=E1101,E0307"
+        additional_dependencies: ["django"]

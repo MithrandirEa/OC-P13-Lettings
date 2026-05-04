@@ -1,3 +1,5 @@
+"""Configuration WSGI pour le projet OC Lettings Site."""
+
 import os
 
 from django.core.wsgi import get_wsgi_application

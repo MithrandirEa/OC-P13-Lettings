@@ -1,3 +1,5 @@
+"""Paramètres de configuration du projet Django OC Lettings."""
+
 import os
 from pathlib import Path
 
@@ -42,7 +44,6 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "oc_lettings_site.urls"
 
-# TODO: les templates de lettings et profiles sont à créer et à ajouter dans DIRS
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
@@ -78,7 +79,10 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
+        "NAME": (
+            "django.contrib.auth.password_validation"
+            ".UserAttributeSimilarityValidator"
+        ),
     },
     {
         "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",

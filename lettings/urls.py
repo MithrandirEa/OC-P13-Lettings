@@ -1,3 +1,5 @@
+"""Définition des routes URL pour l'application lettings."""
+
 from django.urls import path
 
 from . import views

@@ -1,3 +1,5 @@
+"""Définition des routes URL principales du site OC Lettings."""
+
 from django.contrib import admin
 from django.urls import include, path
 
