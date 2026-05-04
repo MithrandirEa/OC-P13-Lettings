@@ -1,3 +1,5 @@
+"""Configuration ASGI pour le projet OC Lettings Site."""
+
 import os
 
 from django.core.asgi import get_asgi_application

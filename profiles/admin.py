@@ -1,3 +1,5 @@
+"""Configuration de l'interface d'administration pour l'application profiles."""
+
 from django.contrib import admin
 
 from .models import Profile
