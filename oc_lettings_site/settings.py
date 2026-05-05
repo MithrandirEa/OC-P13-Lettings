@@ -3,6 +3,12 @@
 import os
 from pathlib import Path
 
+import sentry_sdk
+from dotenv import load_dotenv
+from sentry_sdk.integrations.django import DjangoIntegration
+
+load_dotenv()
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -17,6 +23,37 @@ SECRET_KEY = "fp$9^593hsriajg$_%=5trot9g!1qa@ew(o-1#@=&4%=hp46(s"
 DEBUG = True
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
+
+# Sentry configuration for error tracking
+if dsn := os.getenv("SENTRY_DSN"):
+    sentry_sdk.init(
+        dsn=dsn,
+        integrations=[DjangoIntegration()],
+        environment=os.getenv("ENVIRONMENT", "development"),  # "production" en prod
+        release=os.getenv("APP_VERSION", "0.1.0"),  # version du code déployé
+        traces_sample_rate=1.0,  # 1.0 = 100% des transactions tracées (réduire en prod)
+        send_default_pii=True,
+        enable_logs=True,
+    )
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "sentry": {
+            "level": "ERROR",
+            "class": "sentry_sdk.integrations.logging.EventHandler",
+        },
+        "console": {
+            "level": "DEBUG",
+            "class": "logging.StreamHandler",
+        },
+    },
+    "root": {
+        "handlers": ["console", "sentry"],
+        "level": "DEBUG",
+    },
+}
 
 
 # Application definition
