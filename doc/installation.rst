@@ -16,7 +16,7 @@ Cloner le dépôt
 
    cd /path/to/put/project/in
    git clone https://github.com/MithrandirEa/OC-P13-Lettings.git
-   cd Python-OC-Lettings-FR
+   cd OC-P13-Lettings
 
 Créer et activer l'environnement virtuel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -106,3 +106,5 @@ Commandes utiles depuis le shell SQLite3 :
 
    .tables
    .quit
+
+Créez un compte administrateur avec : ``python manage.py createsuperuser``

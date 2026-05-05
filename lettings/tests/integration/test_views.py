@@ -79,8 +79,6 @@ def test_letting_detail_displays_title_and_address(client, letting):
 
 
 @pytest.mark.django_db
-def test_letting_detail_unknown_id_returns_500(client):
-    # La vue utilise get() sans get_object_or_404 → DoesNotExist → 500
-    client.raise_request_exception = False
+def test_letting_detail_unknown_id_returns_404(client):
     response = client.get(reverse("lettings:letting", args=[9999]))
-    assert response.status_code == 500
+    assert response.status_code == 404

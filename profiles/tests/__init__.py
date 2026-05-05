@@ -1,1 +1,1 @@
-"""Package de tests pour l'application lettings."""  # (ou profiles)
+"""Package de tests pour l'application profiles."""
