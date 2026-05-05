@@ -4,3 +4,19 @@ venv
 .venv/
 .env
 poneglyphe.md
+
+# Coverage
+.coverage
+htmlcov/
+coverage.xml
+
+# Pytest
+.pytest_cache/
+
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Sphinx
+doc/_build/
