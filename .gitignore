@@ -17,3 +17,6 @@ coverage.xml
 # OS
 .DS_Store
 Thumbs.db
+
+# Sphinx
+doc/_build/
