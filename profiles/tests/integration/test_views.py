@@ -71,8 +71,6 @@ def test_profile_detail_displays_username(client, profile):
 
 
 @pytest.mark.django_db
-def test_profile_detail_unknown_username_returns_500(client):
-    # La vue utilise get() sans get_object_or_404 → DoesNotExist → 500
-    client.raise_request_exception = False
+def test_profile_detail_unknown_username_returns_404(client):
     response = client.get(reverse("profiles:profile", args=["unknown_user"]))
-    assert response.status_code == 500
+    assert response.status_code == 404
